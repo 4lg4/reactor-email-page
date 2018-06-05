@@ -58,6 +58,7 @@ jobs:
                 name: Running unit tests
                 command: |
                   sudo npm run test
+                  sudo npm run coveralls
     bundle_check:
         <<: *docker_defaults
         steps:
