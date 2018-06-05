@@ -43,7 +43,7 @@ workflows:
             - integration_test:
                 requires:
                     - build
-            - editorconfig_file_check:
+            - bundle_check:
                 requires:
                     - build
 jobs:
@@ -58,7 +58,7 @@ jobs:
                 name: Running unit tests
                 command: |
                   sudo npm run test
-    editorconfig_file_check:
+    bundle_check:
         <<: *docker_defaults
         steps:
             - *attach_workspace
