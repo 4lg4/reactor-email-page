@@ -1,0 +1,127 @@
+@import 'helpers/_include-media';
+
+.form-title {
+  color: #394f63;
+  font-size: 29px;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: #bdc5c8;
+  font-size: 10px;
+  font-weight: lighter;
+  border-bottom: 1px solid #bdc5c8;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  margin-bottom: 20px;
+}
+
+.form-group, .row {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  color: #394f63;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.input {
+  font-size: 1.3em;
+  padding: 5px 7px;
+  margin-bottom: 20px;
+  font-weight: lighter;
+  border: 1px solid #c3c4c3;
+  border-radius: 3px;
+}
+
+.textarea {
+  display: flex;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  font-weight: lighter;
+  border: 1px solid #c3c4c3;
+  border-radius: 3px;
+  width: 100%;
+  min-height: 200px;
+  height: 200px;
+}
+
+.btn {
+  background-color: #3fa9e2;
+  border-bottom: 2px solid #008abe;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 20px;
+  width: 100%;
+  border: 0;
+}
+
+.errors-wrapper {
+  display: flex;
+  flex-direction: column;
+  background: #F7D7DB;
+  color: #701D26;
+  padding: 2%;
+  width: 96%;
+  margin-bottom: 10px;
+}
+
+.success-wrapper {
+  display: flex;
+  flex-direction: column;
+  background: #D5EDDB;
+  color: #396F45;
+  padding: 2%;
+  width: 96%;
+  margin-bottom: 10px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #701D26;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0)
+  }
+  50% { transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
