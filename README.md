@@ -9,6 +9,7 @@
 
 ## Frameworks, Libraries and Tools
 
+- POI.JS as zero-config bundler for JavaScript applications;
 - ReactJS as JavaScript library for building user interfaces;
 - NPM as dependency manager;
 - Mocha as test framework;
@@ -54,7 +55,14 @@ $ choco install nodejs.install -version v8.9.3
 
 ## Publishing the package
 
-This project is using `np` as publisher helper. For more information, please check [`np` documentation](https://github.com/sindresorhus/np#readme)
+This project is using `np` as publisher helper. So there are some automated tasks that will be triggered when `np` runs:
+
+- Run the tests and check if the code coverage are on the expected values;
+- Check if the changelog has the required updates to automate the `CHANGELOG.md` file update;
+- Check for the bundlesize;
+- Create the bundle files;
+
+For more information, please check [`np` documentation](https://github.com/sindresorhus/np#readme) to check all the NPM events that are triggered.
 
 
 ## NPM Commands
@@ -95,7 +103,7 @@ These are the list of the tech debt / improvements for this project
 
 - [] Improve the local setup. Currently, we have API and Frontend separated in different repositories to have automated validations easier, simulating a real microfrontend scenario. However it increases complexity to run that locally. Create a `docker-compose.yml` with this setup can be helpful;
 - [] Add different layers of test, such as performance and E2E tests;
-- [] Add more scenarios for the Storybook, simulating how the components should work in different cases;
+- [] Add more scenarios for the StorybookJS, simulating how the components should work in different cases;
 - [] Service discovery integration with the API, such as `consul`, with fallback for `.env`. This will make the application decoupled with the code and configuration, avoiding unnecessary deployment in case of the configuration changes;
 
 
