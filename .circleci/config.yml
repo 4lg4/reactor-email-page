@@ -40,9 +40,6 @@ workflows:
             - unit_test:
                 requires:
                     - build
-            - integration_test:
-                requires:
-                    - build
             - bundle_check:
                 requires:
                     - build
