@@ -21,7 +21,8 @@ install_steps: &install_steps
         - run:
             name: Installing Dependencies
             command: |
-                npm install --silent
+                sudo npm install -g npm@5.5.1
+                sudo npm install --silent
         - save_cache:
             name: Save node_modules cache
             key: dependency-cache-{{ .Branch }}-{{ checksum "package.json" }}
