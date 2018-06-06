@@ -19,6 +19,14 @@
 - Node Fetch as HTTP client;
 
 
+## Running the project locally
+
+This project depends of [reactor-email-facade](https://github.com/willmendesneto/reactor-email-facade) to be running in your local computer. So you need to follow the steps to run that locally.
+
+### What about the CORS issue locally?
+
+It's required a plugin in your browser to run that locally. I recomend you to use [Allow-Control-Allow-Origin: *](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en) in case Google Chrome is your browser or look for some similar plugin in your computer
+
 
 ## How to install
 
@@ -87,15 +95,6 @@ This project is using Circle CI to run all the automated tasks/validations. This
 
 ![Circle CI Pipeline](./docs/circle-ci-pipeline.png)
 
-
-
-## Running the project locally
-
-This project depends of [reactor-email-facade](https://github.com/willmendesneto/reactor-email-facade) to be running in your local computer. So you need to follow the steps to run that locally.
-
-### What about the CORS issue locally?
-
-It's required a plugin in your browser to run that locally. I recomend you to use [Allow-Control-Allow-Origin: *](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en) in case Google Chrome is your browser or look for some similar plugin in your computer
 
 ## Improvements
 
