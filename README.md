@@ -102,6 +102,7 @@ It's required a plugin in your browser to run that locally. I recomend you to us
 These are the list of the tech debt / improvements for this project
 
 - [] Improve the local setup. Currently, we have API and Frontend separated in different repositories to have automated validations easier, simulating a real microfrontend scenario. However it increases complexity to run that locally. Create a `docker-compose.yml` with this setup can be helpful;
+- Improve User experience. Currently, the page split the emails based on the `,` separator, which can be improved if we use dynamic inputs. But as the first version we can validate the idea and improve as it goes. Another point is related to the loading component, which can give better experience with [small actions in the buttons](https://tubikstudio.com/ux-practices-8-solid-tips-on-cta-button-design/); 
 - [] Add different layers of test, such as performance and E2E tests;
 - [] Add more scenarios for the StorybookJS, simulating how the components should work in different cases;
 - [] Service discovery integration with the API, such as `consul`, with fallback for `.env`. This will make the application decoupled with the code and configuration, avoiding unnecessary deployment in case of the configuration changes;
