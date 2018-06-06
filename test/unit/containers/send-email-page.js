@@ -70,7 +70,7 @@ describe('send-email-page.js', () => {
         cc={'cc@gmail.com'}
         bcc={'invalid-email'}
         subject={'My subject'}
-        text={''}
+        text={'<p>here we go!</p>'}
       />
     )
     element.setState({
@@ -79,11 +79,12 @@ describe('send-email-page.js', () => {
       cc: 'cc@gmail.com',
       bcc: 'bcc@gmail.com',
       subject: 'My subject',
-      text: '',
+      text: '<p>here we go!</p>',
     });
     expect(element.find('.errors-wrapper').length).to.eql(0);
     element.find('button').simulate('click');
     expect(element.find('.errors-wrapper').length).to.eql(1);
+    expect(fetch.callCount).to.eql(0)
   });
 
   it('should not render the error messages if form was submited with success', () => {

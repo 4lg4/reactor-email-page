@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import fetch from 'node-fetch';
-import isemail from 'isemail';
 import Section from '../components/section';
 import FormSection from '../components/form-section';
 import LoadingContent from '../components/loading-content';
@@ -10,7 +9,7 @@ import Header from '../components/header';
 import HowToUse from '../components/how-to-use';
 import Footer from '../components/footer';
 import FirstSection from '../components/first-section';
-import { toArray } from '../helpers';
+import { toArray, isHtmlElement, isAValidEmail } from '../helpers';
 
 import '../../scss/pages/send-email.scss';
 
@@ -45,19 +44,19 @@ class SendEmailPage extends Component {
   isAValidForm({ from, to, cc, bcc, subject, text }) {
 
     let errors = [];
-    if (!isemail.validate(from)) {
+    if (!isAValidEmail(from)) {
       errors.push({ key: 'from', message: 'from: should be a valid email' });
     }
 
-    if (to.some(email => !isemail.validate(email))) {
+    if (to.some(email => !isAValidEmail(email))) {
       errors.push({ key: 'to', message: 'TO: should be a valid email' });
     }
 
-    if (cc.some(email => !isemail.validate(email))) {
+    if (cc.some(email => !isAValidEmail(email))) {
       errors.push({ key: 'cc', message: 'CC: should be a valid email' });
     }
 
-    if (bcc.some(email => !isemail.validate(email))) {
+    if (bcc.some(email => !isAValidEmail(email))) {
       errors.push({ key: 'bcc', message: 'BCC: should be a valid email' });
     }
 
@@ -66,6 +65,10 @@ class SendEmailPage extends Component {
     }
     if (!text) {
       errors.push({ key: 'text', message: 'TEXT: should be informed' });
+    }
+
+    if (isHtmlElement(text)) {
+      errors.push({ key: 'text', message: 'TEXT: should be text format only' });
     }
 
     return { valid: errors.length === 0, errors };
@@ -136,7 +139,7 @@ class SendEmailPage extends Component {
           <HowToUse />
           {this.state.errors.length > 0 &&  (
             <div className="errors-wrapper">
-              <p>{this.state.errors.map(({ message }) => message).join(', ')}</p>
+              {this.state.errors.map(({ message }) => <p>{message}</p>)}
             </div>
           )}
           {this.state.success &&  (

@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "generator-poi-boilerplate-demo": "^1.2.1",
+    "is-html": "^1.1.0",
     "isemail": "^3.1.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
