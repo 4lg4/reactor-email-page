@@ -32,11 +32,11 @@ describe('send-email-page.js', () => {
   after(() => sandbox.restore())
 
   it('should render the page title', () => {
-    expect(wrapper.find('FirstSection').props().title).to.eql('Reactor Email Facade')
+    expect(wrapper.find('FirstSection').props().title).to.eql('Reactor Email Page')
   })
 
   it('should render the page description', () => {
-    expect(wrapper.find('FirstSection').props().description).to.eql('Send a new email')
+    expect(wrapper.find('FirstSection').props().description).to.eql('Sending emails like a boss!')
   })
 
   it('should not render the error message if the form was not submited', () => {

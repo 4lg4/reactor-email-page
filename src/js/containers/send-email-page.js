@@ -7,6 +7,7 @@ import FormSection from '../components/form-section';
 import LoadingContent from '../components/loading-content';
 
 import Header from '../components/header';
+import HowToUse from '../components/how-to-use';
 import Footer from '../components/footer';
 import FirstSection from '../components/first-section';
 import { toArray } from '../helpers';
@@ -128,10 +129,11 @@ class SendEmailPage extends Component {
       <Fragment>
         <Header />
         <FirstSection
-          title="Reactor Email Facade"
-          description="Send a new email"
+          title="Reactor Email Page"
+          description="Sending emails like a boss!"
         />
         <Section className="home-page-wrapper is-1-column">
+          <HowToUse />
           {this.state.errors.length > 0 &&  (
             <div className="errors-wrapper">
               <p>{this.state.errors.map(({ message }) => message).join(', ')}</p>
